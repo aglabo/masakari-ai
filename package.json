@@ -1,0 +1,31 @@
+{
+  "name": "@aglabo/masakari",
+  "version": "0.0.1",
+  "description": "A cross-platform CLI for unified LLM invocation across CLI and OpenAI-compatible backends.",
+  "private": true,
+  "type": "module",
+  "keywords": [
+    "llm",
+    "ai",
+    "cli"
+  ],
+  "author": "atsushifx",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aglabo/masakari-ai.git"
+  },
+  "scripts": {
+    "prepare": "bash ./scripts/setup-dev-env.sh",
+    "scan:secrets": "concurrently \"betterleaks protect --config ./configs/betterleaks.toml\" \"secretlint --secretlintrc ./configs/secretlint.config.yaml .\"",
+
+    "check:sh": "bash runners/run-shfmt.sh --list .",
+    "check:dprint": "dprint check",
+    "format:dprint": "dprint fmt",
+    "format:sh": "bash runners/run-shfmt.sh --format .",
+
+    "lint:sh": "bash runners/run-shellcheck.sh",
+    "test:sh": "bash runners/run-shellspec.sh",
+    "test:sh:all": "bash runners/run-shellspec.sh all"
+  }
+}

@@ -1,0 +1,111 @@
+# src: .gitignore
+# @(#) : masakari-ai base gitignore settings
+#
+# Copyright (c) 2026- atsushifx <http://github.com/atsushifx>
+#
+# This software is released under the MIT License.
+# https://opensource.org/licenses/MIT
+
+
+##  General
+#   OS specific files
+.DS_Store
+thumbs.db
+
+#   logs, patches
+*.log
+*.diff
+*.patch
+
+#   history, cache
+.history/
+.cache/
+# **/*cache
+
+
+#   backup/swap/temp
+$~*
+~*
+*~
+*.tmp
+*.swp
+*.lock
+
+# tracking lock files
+!deno.lock
+!pnpm-lock.yaml
+
+# session files
+*.session.json
+**/*.session.json
+
+# .env files
+.env*
+# example environment file
+!.env.example
+
+# build
+dist/
+
+# release
+releases/*
+!releases/.keep
+
+## Development tools (installed locally)
+.tools/
+
+## beads
+.beads/*
+
+## Worktrees
+# worktree base dir
+.worktrees/
+
+## AI generated files
+
+## Coding AI dependencies
+# SDD (Spec-Driven Development) files
+
+# Claude Code code setting
+.claude/*
+
+# settings
+!.claude/**/settings.json
+
+# tracked agent configurations
+!**/CLAUDE*.md
+!.claude/agents/
+!.claude/agents/**
+!.claude/rules/
+!.claude/rules/**
+!.claude/commands/
+!.claude/commands/**
+
+# MCP server dependency files
+.cocoindex_code/
+.serena/
+.lsmcp/
+.codegraph/*
+
+## Temporary directories are never tracked
+temp/
+tmp/
+**/temp/
+**/tmp/
+
+##  Editor
+#   VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+!.vscode/cspell*
+
+## Node
+.pnpm-store/
+node_modules/
+
+##  Git
+!**/.gitignore
